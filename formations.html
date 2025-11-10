@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nos Formations | PROcréal ACADEMY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="formations-page">
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="PROcréal ACADEMY">
+          <img src="assets/logo.svg" alt="" />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="sr-only">Ouvrir le menu</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="nav" id="primary-navigation" data-nav>
+          <a class="nav-link" href="index.html">Accueil</a>
+          <a class="nav-link is-active" href="formations.html">Formations</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="page-hero">
+        <h1>Nos Formations</h1>
+        <p>
+          Maîtrisez les logiciels de génie civil les plus utilisés dans le monde.
+          Formations pratiques et professionnelles animées par des experts du secteur.
+        </p>
+        <div class="filters" data-filter-group>
+          <button class="filter-btn is-active" type="button" data-filter="all">
+            Tout
+          </button>
+          <button class="filter-btn" type="button" data-filter="progress">
+            En cours
+          </button>
+          <button class="filter-btn" type="button" data-filter="upcoming">
+            À venir
+          </button>
+          <button class="filter-btn" type="button" data-filter="design">
+            Logiciels de dessin
+          </button>
+          <button class="filter-btn" type="button" data-filter="calculation">
+            Logiciels de calcul
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="courses-grid" id="catalogue">
+        <article class="card" data-category="design" data-status="open" id="autocad">
+          <span class="pill pill-open">Inscriptions ouvertes</span>
+          <img
+            src="assets/CARD%20-%20AutoCAD.jpg"
+            alt="Autodesk AutoCAD"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">AutoCAD</span>
+              <span>Durée : 6 semaines</span>
+            </div>
+            <h3>Apprenez les bases d’AutoCAD</h3>
+            <p>
+              Maîtrisez le logiciel de dessin 2D/3D le plus utilisé en ingénierie civile. Des bases
+              aux techniques avancées.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="design" data-status="progress" id="revit">
+          <span class="pill pill-progress">En cours</span>
+          <img
+            src="assets/CARD%20-%20Revit.jpg"
+            alt="Autodesk Revit"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">Revit</span>
+              <span>Durée : 8 semaines</span>
+            </div>
+            <h3>Revit Architecture</h3>
+            <p>
+              Conception architecturale et structurelle en 3D. Gestion complète de projets BIM pour
+              la construction.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="calculation" data-status="upcoming" id="robot">
+          <span class="pill pill-soon">À venir</span>
+          <img
+            src="assets/CARD%20-%20RSA.jpg"
+            alt="Autodesk Robot Structural Analysis"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">Robot</span>
+              <span>Durée : 5 semaines</span>
+            </div>
+            <h3>Robot Structural Analysis</h3>
+            <p>
+              Analyse structurelle intégrée et optimisation. Vérification de normes et codes de
+              construction.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="design" data-status="open" id="archicad">
+          <span class="pill pill-open">Inscriptions ouvertes</span>
+          <img
+            src="assets/CARD%20-%20ArchiCAD.png"
+            alt="Graphisoft ArchiCAD"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">ArchiCAD</span>
+              <span>Durée : 6 semaines</span>
+            </div>
+            <h3>Apprenez les bases d’ArchiCAD</h3>
+            <p>
+              L’un des logiciels de conception 2D/3D le plus utilisé dans les cabinets et bureaux
+              d’étude.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="calculation" data-status="upcoming" id="civil3d">
+          <span class="pill pill-soon">À venir</span>
+          <img
+            src="assets/CARD%20-%20Civil%203D.png"
+            alt="Autodesk Civil 3D"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">Civil 3D</span>
+              <span>Durée : 7 semaines</span>
+            </div>
+            <h3>Autodesk Civil 3D</h3>
+            <p>
+              Conception d’infrastructures avec Civil 3D. Modélisation de structures, vérification
+              des codes et exportation des résultats.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="card" data-category="design" data-status="open" id="lumion">
+          <span class="pill pill-open">Inscriptions ouvertes</span>
+          <img
+            src="assets/CARD%20-%20Lumion.jpg"
+            alt="Lumion Rendus 3D"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <div class="course-meta">
+              <span class="tag">Lumion</span>
+              <span>Durée : 4 semaines</span>
+            </div>
+            <h3>Faites des rendus réalistes avec Lumion</h3>
+            <p>
+              Apprenez à mettre en valeur vos maquettes 3D avec des rendus époustouflants pour vos
+              présentations clients.
+            </p>
+            <a class="link" href="contact.html">En savoir plus</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h3>À propos</h3>
+          <p>
+            PROcréal ACADEMY est le centre de formation leader en logiciels d’ingénierie civile en
+            Côte d’Ivoire, formant les professionnels depuis 2015.
+          </p>
+        </div>
+        <div>
+          <h3>Formations</h3>
+          <ul>
+            <li><a href="formations.html#autocad">AutoCAD</a></li>
+            <li><a href="formations.html#revit">Revit Architecture</a></li>
+            <li><a href="formations.html#archicad">ArchiCAD</a></li>
+            <li><a href="formations.html#robot">Robot Structural Analysis</a></li>
+            <li><a href="formations.html#civil3d">Civil 3D</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Liens rapides</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="formations.html">Nos formations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul class="contact">
+            <li>Adresse : Abidjan, Côte d’Ivoire</li>
+            <li>Téléphone : <a href="tel:+2250102030405">+225 0102030405</a></li>
+            <li>Email : <a href="mailto:contact@procreal-academy.ci">contact@procreal-academy.ci</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2024 PROcréal ACADEMY. Tous droits réservés. | Conception et développement par PROcréal.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
