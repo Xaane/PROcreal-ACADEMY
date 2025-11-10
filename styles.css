@@ -390,6 +390,7 @@ section {
   text-align: center;
   max-width: var(--max-width);
   margin: 0 auto;
+  border-radius: 20;
 }
 
 .contact-intro h1 {
@@ -776,5 +777,6 @@ section {
     font-size: 0.9rem;
   }
 }
+
 
 
