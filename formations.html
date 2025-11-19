@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nos Formations | PROcréal ACADEMY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/styles.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+                950: '#082f49',
+              },
+              accent: {
+                500: '#22c55e',
+                600: '#16a34a',
+              },
+              surface: '#f8fafc',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 20px 40px -10px rgba(2, 132, 199, 0.1)',
+              'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <body class="bg-surface text-slate-600 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center transition-transform hover:scale-105 duration-300">
+            <a href="index.html" class="flex items-center gap-2">
+               <img class="h-6 md:h-9 w-auto transition-all" src="assets/Logos/procreal-logo.svg" alt="PROcréal ACADEMY">
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-slate-600 hover:text-brand-600 font-medium transition relative group">
+              Accueil
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="formations.html" class="text-brand-700 font-semibold hover:text-brand-600 transition relative group">
+              Formations
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-600 transform scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="contact.html" class="text-slate-600 hover:text-brand-600 font-medium transition relative group">
+              Contact
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+            <a href="contact.html" class="bg-brand-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-500/30 transform hover:-translate-y-1 hover:shadow-brand-500/50 duration-300">
+              S'inscrire
+            </a>
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2 transform active:scale-95 transition-transform">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl transition-all duration-300 ease-in-out origin-top transform scale-y-95 opacity-0">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+          <a href="index.html" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">Accueil</a>
+          <a href="formations.html" class="block px-3 py-2 text-brand-600 font-semibold bg-brand-50 rounded-lg">Formations</a>
+          <a href="contact.html" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">Contact</a>
+          <div class="pt-4">
+             <a href="contact.html" class="block w-full text-center bg-brand-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-brand-700 shadow-md transition-transform active:scale-95">S'inscrire</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-20 bg-brand-900 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('assets/new image/img-05.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">Catalogue des Formations</h1>
+        <p class="text-xl text-brand-100 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
+          Développez vos compétences avec nos cursus complets certifiants, conçus pour les professionnels de l'architecture et du génie civil.
+        </p>
+
+        <!-- Filtres -->
+        <div class="mt-12 flex flex-wrap justify-center gap-3 animate-fade-in-up" style="animation-delay: 0.2s;" data-filter-group>
+          <button class="filter-btn is-active px-6 py-2 rounded-full bg-white text-brand-700 font-semibold shadow-lg hover:bg-brand-50 transition transform hover:scale-105 duration-200" data-filter="all">Tout voir</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-brand-800/50 text-white font-medium border border-brand-700 hover:bg-brand-700 transition transform hover:scale-105 duration-200" data-filter="design">Dessin & BIM</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-brand-800/50 text-white font-medium border border-brand-700 hover:bg-brand-700 transition transform hover:scale-105 duration-200" data-filter="calculation">Calcul de Structure</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-brand-800/50 text-white font-medium border border-brand-700 hover:bg-brand-700 transition transform hover:scale-105 duration-200" data-filter="upcoming">Prochaines sessions</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="courses-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card AutoCAD -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="design" data-status="open" data-aos="fade-up">
+            <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">Inscriptions ouvertes</div>
+              <img src="assets/CARD - AutoCAD.jpg" alt="AutoCAD" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">AutoCAD</span>
+                <span class="text-slate-400">1 mois</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Maîtrisez les bases d'AutoCAD</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Maîtrisez le logiciel de dessin 2D/3D le plus utilisé. Des commandes de base jusqu'à l'impression de plans professionnels.
+              </p>
+              <a href="pages/formations/autocad.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+          <!-- Card Revit -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="design" data-status="progress" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">En cours</div>
+              <img src="assets/CARD - Revit.jpg" alt="Revit" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">Revit Arch</span>
+                <span class="text-slate-400">6 semaines</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Revit Architecture BIM</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Conception architecturale et structurelle en 3D. Gestion complète de projets BIM pour la construction moderne.
+              </p>
+              <a href="pages/formations/revit.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+          <!-- Card Robot -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="calculation" data-status="upcoming" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">Bientôt</div>
+              <img src="assets/CARD - RSA.jpg" alt="RSA" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">Robot SA</span>
+                <span class="text-slate-400">2 mois</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Robot Structural Analysis</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Analyse structurelle avancée. Calcul et vérification des structures en béton armé et métal selon les normes.
+              </p>
+              <a href="pages/formations/robot.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+          <!-- Card ArchiCAD -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="design" data-status="open" data-aos="fade-up">
+             <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">Inscriptions ouvertes</div>
+              <img src="assets/CARD - ArchiCAD.png" alt="ArchiCAD" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">ArchiCAD</span>
+                <span class="text-slate-400">6 semaines</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">ArchiCAD Pro</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Le logiciel BIM préféré des architectes. Apprenez à modéliser rapidement et à produire des documents de haute qualité.
+              </p>
+              <a href="formations.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+          <!-- Card Civil 3D -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="calculation" data-status="upcoming" data-aos="fade-up" data-aos-delay="100">
+             <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">Bientôt</div>
+              <img src="assets/CARD - Civil 3D.png" alt="Civil 3D" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+               <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">Civil 3D</span>
+                <span class="text-slate-400">7 semaines</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Autodesk Civil 3D</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Conception d’infrastructures routières et VRD. Modélisation de terrain, profils en long et en travers.
+              </p>
+              <a href="formations.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+          <!-- Card Lumion -->
+          <article class="card bg-white rounded-2xl overflow-hidden shadow-soft group hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col hover:shadow-2xl" data-category="design" data-status="open" data-aos="fade-up" data-aos-delay="200">
+             <div class="relative h-56 overflow-hidden shrink-0">
+              <div class="absolute top-4 left-4 z-10 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md transform transition hover:scale-105">Inscriptions ouvertes</div>
+              <img src="assets/CARD - Lumion.jpg" alt="Lumion" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-in-out">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+               <div class="flex justify-between items-center mb-3 text-sm">
+                <span class="font-bold text-brand-600">Lumion</span>
+                <span class="text-slate-400">4 semaines</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition">Rendus Réalistes Lumion</h3>
+              <p class="text-slate-500 mb-6 line-clamp-3 text-sm flex-1">
+                Donnez vie à vos projets. Créez des images et vidéos photoréalistes pour convaincre vos clients.
+              </p>
+              <a href="formations.html" class="block w-full text-center py-3 border border-brand-200 text-brand-700 font-bold rounded-xl hover:bg-brand-50 transition transform group-hover:scale-[1.02] duration-200">Voir le détail</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          
+          <div class="space-y-4">
+            <a href="index.html" class="flex items-center gap-2 mb-4 opacity-90 hover:opacity-100 transition-opacity">
+              <img src="assets/logo.svg" class="h-8 brightness-0 invert opacity-90" alt="PROcréal">
+            </a>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Le centre de référence pour la formation aux logiciels d'architecture et d'ingénierie en Côte d'Ivoire.
+            </p>
+            <div class="flex gap-4 pt-2">
+              <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-white transform hover:scale-110 duration-300">FB</a>
+              <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-600 transition text-white transform hover:scale-110 duration-300">LN</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-white font-bold text-lg mb-4">Formations</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="formations.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">AutoCAD</a></li>
+              <li><a href="formations.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Revit Architecture</a></li>
+              <li><a href="formations.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Robot Structural Analysis</a></li>
+              <li><a href="formations.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Civil 3D</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white font-bold text-lg mb-4">Liens utiles</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="index.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Accueil</a></li>
+              <li><a href="formations.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Nos formations</a></li>
+              <li><a href="contact.html" class="hover:text-brand-400 transition hover:pl-1 duration-200 block">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3 group">
+                <svg class="w-5 h-5 text-brand-500 mt-0.5 group-hover:text-brand-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span>Abidjan, Côte d'Ivoire</span>
+              </li>
+              <li class="flex items-center gap-3 group">
+                <svg class="w-5 h-5 text-brand-500 group-hover:text-brand-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <a href="tel:+2250102030405" class="hover:text-white transition">+225 01 02 03 04 05</a>
+              </li>
+              <li class="flex items-center gap-3 group">
+                <svg class="w-5 h-5 text-brand-500 group-hover:text-brand-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <a href="mailto:contact@procreal.ci" class="hover:text-white transition">contact@procreal.ci</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        
+        <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+          <p>&copy; 2025 PROcréal ACADEMY. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Simple Filter Script + AOS Init -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize AOS
+        AOS.init({
+          once: true,
+          offset: 50,
+          duration: 800,
+          easing: 'ease-out-cubic',
+        });
+
+        const filterGroup = document.querySelector('[data-filter-group]');
+        const cards = document.querySelectorAll('.card');
+
+        if (filterGroup) {
+          filterGroup.addEventListener('click', (e) => {
+             if(e.target.classList.contains('filter-btn')) {
+                // Update buttons
+                filterGroup.querySelectorAll('.filter-btn').forEach(btn => {
+                   btn.classList.remove('bg-white', 'text-brand-700', 'shadow-lg', 'scale-105');
+                   btn.classList.add('bg-brand-800/50', 'text-white', 'border');
+                });
+                e.target.classList.remove('bg-brand-800/50', 'text-white', 'border');
+                e.target.classList.add('bg-white', 'text-brand-700', 'shadow-lg', 'scale-105');
+
+                const filter = e.target.dataset.filter;
+                
+                cards.forEach(card => {
+                   const category = card.dataset.category;
+                   const status = card.dataset.status;
+                   
+                   // Reset animation
+                   card.classList.remove('aos-animate');
+                   setTimeout(() => card.classList.add('aos-animate'), 50);
+
+                   if (filter === 'all') {
+                     card.style.display = 'flex';
+                   } else if (filter === 'upcoming') {
+                     card.style.display = (status === 'upcoming') ? 'flex' : 'none';
+                   } else {
+                     card.style.display = (category === filter) ? 'flex' : 'none';
+                   }
+                });
+             }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
