@@ -5,7 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+      const isHidden = menu.classList.contains('hidden');
+      
+      if (isHidden) {
+        // OUVERTURE
+        menu.classList.remove('hidden');
+        // Petit délai pour permettre au navigateur de calculer le layout avant la transition
+        setTimeout(() => {
+          menu.classList.remove('opacity-0', 'scale-y-95');
+          menu.classList.add('opacity-100', 'scale-y-100');
+        }, 10);
+      } else {
+        // FERMETURE
+        menu.classList.remove('opacity-100', 'scale-y-100');
+        menu.classList.add('opacity-0', 'scale-y-95');
+        
+        // Attendre la fin de la transition CSS (300ms) avant de cacher
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300);
+      }
     });
   }
 
@@ -32,9 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        // Close mobile menu if open
+        
+        // Close mobile menu properly if open
         if (menu && !menu.classList.contains('hidden')) {
-          menu.classList.add('hidden');
+            menu.classList.remove('opacity-100', 'scale-y-100');
+            menu.classList.add('opacity-0', 'scale-y-95');
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
         }
         
         targetElement.scrollIntoView({
@@ -44,48 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Intersection Observer for Scroll Animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.add('animate-fade-in-up'); // Add keyframe animation class
-        observer.unobserve(entry.target);
-      }
+  // Initialize AOS (Animation On Scroll) if available
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      once: true,
+      offset: 50,
+      duration: 800,
+      easing: 'ease-out-cubic',
     });
-  }, observerOptions);
-
-  // Select elements to animate
-  const animatedElements = document.querySelectorAll('.card, .reason, .section-header, .hero-content > *, .about-grid > *');
-  animatedElements.forEach((el, index) => {
-    el.style.opacity = '0'; // Hide initially
-    // Add staggered delay classes based on index or random
-    // This is a simple way to add some variety, for more complex staggering use CSS nth-child
-    if(index % 2 === 0) el.classList.add('delay-100');
-    if(index % 3 === 0) el.classList.add('delay-200');
-    
-    observer.observe(el);
-  });
-  
-  // Specific Observer for Image Reveals
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if(entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-          }
-      })
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('img').forEach(img => {
-      img.classList.add('image-reveal');
-      imageObserver.observe(img);
-  });
-
+  }
 });
